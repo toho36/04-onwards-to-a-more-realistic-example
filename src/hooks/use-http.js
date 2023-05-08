@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useState, useCallback } from 'react';
 
 const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -32,4 +32,5 @@ const useHttp = () => {
     sendRequest,
   };
 };
+
 export default useHttp;

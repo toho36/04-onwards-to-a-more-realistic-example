@@ -5,7 +5,7 @@ import TaskForm from './TaskForm';
 import useHttp from '../../hooks/use-http';
 
 const NewTask = (props) => {
-  const { isLoading, error, sendRequest: sentTaskRequest } = useHttp();
+  const { isLoading, error, sendRequest: sendTaskRequest } = useHttp();
   const createTask = (taskData, taskText) => {
     const generatedId = taskData.name; // firebase-specific => "name" contains generated id
     const createdTask = { id: generatedId, text: taskText };
@@ -13,7 +13,7 @@ const NewTask = (props) => {
     props.onAddTask(createdTask);
   };
   const enterTaskHandler = async (taskText) => {
-    sentTaskRequest(
+    sendTaskRequest(
       {
         url: 'https://react-http-98ba6-default-rtdb.europe-west1.firebasedatabase.app/tasks.json',
         method: 'POST',

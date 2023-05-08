@@ -19,6 +19,7 @@ function App() {
 
       setTasks(loadedTasks);
     };
+
     fetchTasks(
       {
         url: 'https://react-http-98ba6-default-rtdb.europe-west1.firebasedatabase.app/tasks.json',
